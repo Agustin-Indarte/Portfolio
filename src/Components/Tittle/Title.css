@@ -1,0 +1,58 @@
+.loader {
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    border-radius: 8px;
+  }
+  
+  .Container-words {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow:
+      3px 3px 10px rgba(0, 0, 0, 1),
+      -1px -1px 6px rgba(255, 255, 255, 0.4),
+      inset 3px 3px 10px rgba(0, 0, 0, 1),
+      inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+
+  
+  .word {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2f81f7;
+    font-size: 18px;
+  }
+  
+  .word-slider {
+    display: flex;
+    flex-direction: column;
+    animation: slideWords 8s ease-in-out infinite;
+  }
+  
+  @keyframes slideWords {
+    0%, 15% {
+      transform: translateY(0);
+    }
+    25%, 40% {
+      transform: translateY(-50px);
+    }
+    50%, 65% {
+      transform: translateY(-100px);
+    }
+    75%, 90% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0); /* vuelve al inicio */
+    }
+  }
+  

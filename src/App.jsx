@@ -5,7 +5,7 @@ import { Navbar } from './Components';
 
 function App() {
   return (
-    <div className="bg-dark text-light">
+    <div className="text-light Container-Portfolio">
       <section id="Home">
         <Home />
       </section>
