@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Home, Projects, Skills, Contact } from './Pages';
+import { Navbar } from './Components';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <section id="contact">
         <Contact />
       </section>
+
+      <Navbar/>
     </div>
   );
 }
