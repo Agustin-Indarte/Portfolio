@@ -1,85 +1,93 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+// Animación de flotación
+const floatAnimation = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+`;
 
 const CardPerfil = () => {
-    return (
-      <StyledWrapper>
-        <div className="container noselect">
-          <div className="canvas">
-            <div className="tracker tr-1" />
-            <div className="tracker tr-2" />
-            <div className="tracker tr-3" />
-            <div className="tracker tr-4" />
-            <div className="tracker tr-5" />
-            <div className="tracker tr-6" />
-            <div className="tracker tr-7" />
-            <div className="tracker tr-8" />
-            <div className="tracker tr-9" />
-            <div id="cardPerfil">
-              <div className="glass-container">
-                <div className="image-wrapper">
-                  <img src="./Perfil.png" alt="Profile" className="profile-image" />
+  return (
+    <StyledWrapper>
+      <div className="container noselect">
+        <div className="canvas">
+        {[...Array(25)].map((_, i) => (
+<div key={i} className={`tracker tr-${i + 1}`} />
+))}
+          <div id="cardPerfil">
+            <div className="glass-container">
+              <div className="image-wrapper">
+                <img src="./Perfil.png" alt="Profile" className="profile-image" />
+              </div>
+              
+              <div className="card-content">
+                <div className="cardPerfil-glare" />
+                <div className="cyber-lines">
+                  <span /><span /><span /><span />
                 </div>
-                
-                <div className="card-content">
-                  <div className="cardPerfil-glare" />
-                  <div className="cyber-lines">
-                    <span /><span /><span /><span />
-                  </div>
-                 
-                  <div className="glowing-elements">
-                    <div className="glow-1" />
-                    <div className="glow-2" />
-                    <div className="glow-3" />
-                  </div>
-                  <div className="cardPerfil-particles">
-                    <span /><span /><span /> <span /><span /><span />
-                  </div>
-                  <div className="corner-elements">
-                    <span /><span /><span /><span />
-                  </div>
-                  <div className="scan-line" />
+               
+                <div className="glowing-elements">
+                  <div className="glow-1" />
+                  <div className="glow-2" />
+                  <div className="glow-3" />
                 </div>
+                <div className="cardPerfil-particles">
+                  <span /><span /><span /> <span /><span /><span />
+                </div>
+                <div className="corner-elements">
+                  <span /><span /><span /><span />
+                </div>
+                <div className="scan-line" />
               </div>
             </div>
           </div>
         </div>
-      </StyledWrapper>
-    );
-  }
+      </div>
+    </StyledWrapper>
+  );
+}
   
-  const StyledWrapper = styled.div`
-    .container {
-      position: relative;
-      width: 400px;
-      height: 530px;
-      transition: 200ms;
-    }
   
-    #cardPerfil {
-      position: absolute;
-      inset: 0;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-  
-    .glass-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        135deg, 
-        rgba(26, 26, 26, 0.6) 0%, 
-        rgba(38, 38, 38, 0.5) 100%
-      );
-      backdrop-filter: blur(4px);
-      border-radius: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      box-shadow:
-        0 0 20px rgba(0, 0, 0, 0.3),
-        inset 0 0 20px rgba(0, 0, 0, 0.2);
-    }
-  
+const StyledWrapper = styled.div`
+.container {
+  position: relative;
+  width: 400px;
+  height: 530px;
+  transition: 200ms;
+  will-change: transform, box-shadow;
+  animation: ${floatAnimation} 4s ease-in-out infinite;
+  filter: drop-shadow(20px 20px 0px rgba(92, 103, 255, 0.3));
+}
+
+/* Añadir sombra más pronunciada */
+#cardPerfil {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.glass-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg, 
+    rgba(26, 26, 26, 0.6) 0%, 
+    rgba(38, 38, 38, 0.5) 100%
+  );
+  backdrop-filter: blur(8px); /* Aumentar el blur para mayor efecto de vidrio */
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.15); /* Borde más visible */
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.1),
+    inset 0 0 30px rgba(255, 255, 255, 0.05);
+}
     /* Contenedor de la imagen - ajustado para imagen más grande */
     .image-wrapper {
       position: absolute;
@@ -119,22 +127,6 @@ const CardPerfil = () => {
       z-index: 2;
     }
   
-    .title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-align: center;
-      width: 100%;
-      background: linear-gradient(45deg, #00ffaa, #00a2ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 15px rgba(0, 255, 170, 0.3));
-      text-shadow:
-        0 0 10px rgba(92, 103, 255, 0.5),
-        0 0 20px rgba(92, 103, 255, 0.3);
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
   
   
     .highlight {
@@ -148,7 +140,7 @@ const CardPerfil = () => {
   
     .tracker:hover ~ #cardPerfil .profile-image {
       opacity: 0.7;
-      transform: scale(0.95);
+ 
     }
   
     .tracker:hover ~ #cardPerfil .title {
@@ -162,8 +154,9 @@ const CardPerfil = () => {
   
     /* Resto de tus efectos (glare, particles, etc.) */
     .cardPerfil-glare {
-      /* mantén tus estilos originales */
-    }
+  opacity: 0.1;
+  animation: glare 3s ease-in-out infinite;
+}
 
     
   .glowing-elements {
@@ -247,36 +240,42 @@ const CardPerfil = () => {
     --y: -1;
     top: 40%;
     left: 20%;
+    animation-delay: 0s;
   }
   .cardPerfil-particles span:nth-child(2) {
     --x: -1;
     --y: -1;
     top: 60%;
     right: 20%;
+    animation-delay: 0.2s;
   }
   .cardPerfil-particles span:nth-child(3) {
     --x: 0.5;
     --y: 1;
     top: 20%;
     left: 40%;
+    animation-delay: 0.4s;
   }
   .cardPerfil-particles span:nth-child(4) {
     --x: -0.5;
     --y: 1;
     top: 80%;
     right: 40%;
+    animation-delay: 0.5s;
   }
   .cardPerfil-particles span:nth-child(5) {
     --x: 1;
     --y: 0.5;
     top: 30%;
     left: 60%;
+    animation-delay: 0.6s;
   }
   .cardPerfil-particles span:nth-child(6) {
     --x: -1;
     --y: 0.5;
     top: 70%;
     right: 60%;
+    animation-delay: 0.8s;
   }
 
   #cardPerfil::before {
@@ -734,6 +733,38 @@ const CardPerfil = () => {
   #cardPerfil:hover .corner-elements span {
     border-color: rgba(92, 103, 255, 0.8);
     box-shadow: 0 0 10px rgba(92, 103, 255, 0.5);
-  }`;
+  }/* Añadir efecto de reflejo en la parte inferior */
+  .glass-container::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: radial-gradient(ellipse at center, 
+      rgba(255,255,255,0.15) 0%, 
+      rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    filter: blur(5px);
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  /* Añadir sombra ambiental */
+  .container::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 20px;
+    height: 30px;
+    background: rgba(92, 103, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -1;
+    animation: ${floatAnimation} 4s ease-in-out infinite;
+    animation-delay: 0.2s;
+  }
+`;
 
 export default CardPerfil;
