@@ -58,7 +58,7 @@ const StyledWrapper = styled.div`
   transition: 200ms;
   will-change: transform, box-shadow;
   animation: ${floatAnimation} 4s ease-in-out infinite;
-  filter: drop-shadow(20px 20px 0px rgba(92, 103, 255, 0.3));
+  filter: drop-shadow(15px 15px 0px rgba(92, 103, 255, 0.3));
 }
 
 /* Añadir sombra más pronunciada */

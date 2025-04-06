@@ -30,9 +30,9 @@ function Home() {
       />
     </svg>
   );
-  
-  
-  
+
+
+
   const linkedinSvg = (
     <svg
       viewBox="0 0 24 24"
@@ -52,9 +52,9 @@ function Home() {
       />
     </svg>
   );
-  
-  
-  
+
+
+
   const downloadSvg = (
     <svg
       viewBox="0 0 24 24"
@@ -64,10 +64,10 @@ function Home() {
       height="30"
     >
       <defs>
-        
-          <stop offset="0%" stopColor="#00ffaa" />
-          <stop offset="100%" stopColor="#00a2ff" />
-      
+
+        <stop offset="0%" stopColor="#00ffaa" />
+        <stop offset="100%" stopColor="#00a2ff" />
+
       </defs>
       <path
         fill="url(#githubGradient)"
@@ -75,29 +75,34 @@ function Home() {
       />
     </svg>
   );
-  
-  
+
+
 
   return (
     <section id="inicio" className="vh-100 d-flex justify-content-center">
       <Row className="w-75 mt-5">
-        <Col lg={6} className='d-flex flex-column mt-5'>
-          <p className='fs-5 mt-5 Parrafo-Perfil'>¡Bienvenido a mi portfolio! Soy:</p>
+        <Col lg={6} className='d-flex flex-column'>
+          <p className='fs-5 mt-4 Parrafo-Perfil'>¡Bienvenido a mi portfolio! Soy:</p>
           <h1 className='MiNombre mb-4'>Agustin Indarte</h1>
           <div className="mb-2">
             <Title />
           </div>
-          <p className='lead Parrafo-Perfil mb-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio voluptatibus laboriosam error. Dolor amet illum rem consequatur perspiciatis laudantium saepe libero sit at.</p>
+          <p className='lead Parrafo-Perfil mb-4'>
+          Tengo 22 años y me desempeño como auxiliar administrativo en el área de Tesorería, donde desarrollo un sistema web para la gestión de ingresos, egresos y saldos. <br />
+            Me apasiona la programación, resolver problemas y utilizar la tecnología para mejorar procesos.
+            Me destaco por mi capacidad de adaptación, creatividad, organización y liderazgo.
+
+          </p>
           <div className='' style={{ display: 'flex', gap: '1rem' }}>
             <IconButton3D svg={githubSvg} url="https://github.com/Agustin-Indarte" title="GitHub" />
-            
+
             <IconButton3D svg={linkedinSvg} url="https://www.linkedin.com/in/agustin-indarte/" title="LinkedIn" />
             <IconButton3D
               svg={downloadSvg}
               url="/CV_Agustin_Indarte.pdf"
               title="Descargar CV"
             />
-            <EmailButton/>
+            <EmailButton />
           </div>
         </Col>
         <Col lg={6} className='text-center'>
