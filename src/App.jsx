@@ -21,6 +21,10 @@ function App() {
         <Projects />
       </section>
 
+      <section id="otra" className='d-flex justify-content-center align-items-center' style={{ minHeight: '100vh', paddingTop: '100px' }}>
+  <h2>Otra Sección</h2>
+</section>
+
       <section id="contact">
         <Contact />
       </section>
