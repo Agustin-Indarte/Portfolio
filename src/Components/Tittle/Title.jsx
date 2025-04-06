@@ -8,9 +8,8 @@ const Title = () => {
         <div className="word-slider">
           <div className="word">Técnico en Informática</div>
           <div className="word">Desarrollador Frontend</div>
-          <div className="word">Scrum Master</div>
           <div className="word">Estudiante FullStack</div>
-          <div className="word">Técnico en Informática</div> {/* ← repetida para loop sin corte */}
+          <div className="word">Scrum Master</div>
         </div>
       </div>
     </div>

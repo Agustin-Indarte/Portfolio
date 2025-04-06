@@ -1,58 +1,76 @@
 .loader {
-    display: flex;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 25px;
-    border-radius: 8px;
-  }
-  
-  .Container-words {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 50px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow:
-      3px 3px 10px rgba(0, 0, 0, 1),
-      -1px -1px 6px rgba(255, 255, 255, 0.4),
-      inset 3px 3px 10px rgba(0, 0, 0, 1),
-      inset -1px -1px 6px rgba(255, 255, 255, 0.4);
-  }
-  
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  justify-content: start;
+}
 
+.Container-words {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow:
+    3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+    background-color: #0a0f16;
+}
+
+.word-slider {
+  display: flex;
+  flex-direction: column;
+  animation: slideWords 8s ease-in-out infinite;
   
-  .word {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #2f81f7;
-    font-size: 18px;
-  }
+}
+
+.word {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  font-size: 1.7rem;
+  background: linear-gradient(45deg, #00a2ff, #00ffaa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+  width: 100%;
   
-  .word-slider {
-    display: flex;
-    flex-direction: column;
-    animation: slideWords 8s ease-in-out infinite;
-  }
-  
-  @keyframes slideWords {
-    0%, 15% {
-      transform: translateY(0);
-    }
-    25%, 40% {
-      transform: translateY(-50px);
-    }
-    50%, 65% {
-      transform: translateY(-100px);
-    }
-    75%, 90% {
-      transform: translateY(-150px);
-    }
-    100% {
-      transform: translateY(0); /* vuelve al inicio */
-    }
-  }
-  
+  box-sizing: border-box;
+}
+
+/* Keyframes para 4 palabras */
+@keyframes slideWords {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-60px); }
+  50%, 70% { transform: translateY(-120px); }
+  75%, 95% { transform: translateY(-180px); }
+  100% { transform: translateY(0); }
+}
+
+/* Opcional: líneas scan */
+.Container-words::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 95%,
+    rgba(0, 255, 170, 0.1) 100%
+  );
+  background-size: 100% 6px;
+  pointer-events: none;
+  z-index: 1;
+}
