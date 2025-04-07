@@ -5,10 +5,13 @@ import styled from 'styled-components';
 const FormContact = () => {
     return (
         <StyledWrapper>
-            <div className="fc-form-card1">
+            <div className="fc-form-card1 mt-5">
                 <div className="fc-form-card2">
                     <form className="fc-form">
-                        <p className="fc-form-heading">Contacto</p>
+                        <div className="fc-form-header">
+                            <p className="fc-form-heading">Ponete en contacto</p>
+                            <p className="fc-form-subtitle">¿Consultas, ideas o proyectos? Estoy para escucharte.</p>
+                        </div>
 
                         <Row>
                             <Col lg={6}>
@@ -30,19 +33,19 @@ const FormContact = () => {
                             <input required className="fc-input" type="text" />
                             <label className="fc-label">Asunto</label>
                         </div>
-                        
+
                         <div className="fc-form-control">
                             <textarea required rows={4} className="fc-input fc-textarea" />
                             <label className="fc-label">Mensaje</label>
                         </div>
-                        
+
                         <button className="fc-sendMessage-btn">Enviar</button>
                     </form>
                 </div>
             </div>
         </StyledWrapper>
     );
-}
+};
 
 const StyledWrapper = styled.div`
   .fc-form-card1 {
@@ -75,12 +78,22 @@ const StyledWrapper = styled.div`
     gap: 1.5rem;
   }
 
+  .fc-form-header {
+    text-align: center;
+
+  }
+
   .fc-form-heading {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #64ffda;
-    text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .fc-form-subtitle {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin: 0;
   }
 
   .fc-form-control {
@@ -92,52 +105,58 @@ const StyledWrapper = styled.div`
   .fc-label {
     position: absolute;
     top: 50%;
-    left: 10px;
-    transition: transform ease 0.2s;
+    left: 14px;
     transform: translate(0%, -50%);
     font-size: 0.75em;
     user-select: none;
     pointer-events: none;
-    color: #b0b0b0;
+    color: #a0a0a0;
+    transition: transform 0.2s ease, color 0.2s ease;
   }
 
   .fc-input {
     width: 100%;
-    background-color: #1f1f1f;
+    background-color: rgb(255, 255, 255);
     border: none;
     outline: none;
-    color: #fff;
-    padding: 0.8rem 1rem;
+    color: #f1f1f1;
+    padding: 1rem;
     font-size: 0.9rem;
     border-radius: 10px;
-    transition: box-shadow ease 0.2s;
-    box-shadow: inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px rgb(95 94 94 / 25%);
+    box-shadow:
+      inset 2px 2px 5px rgba(0, 0, 0, 0.6),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+    transition: box-shadow 0.3s ease;
     resize: none;
   }
 
   .fc-input:focus,
   .fc-input:valid {
-    box-shadow: inset 3px 3px 4px #0e0e0e, inset -3px -3px 4px #5f5e5e;
+    box-shadow:
+      inset 3px 3px 6px rgba(0, 0, 0, 0.7),
+      inset -3px -3px 6px rgba(255, 255, 255, 0.07);
   }
 
   .fc-input:focus + .fc-label,
   .fc-input:valid + .fc-label {
-    transform: translate(-150%, -50%);
+    transform: translate(-160%, -50%);
+    color: #64ffda;
   }
 
   .fc-textarea {
-    min-height: 100px;
-    padding-top: 1.5rem;
+    min-height: 120px;
+    padding-top: 1.6rem;
   }
 
   .fc-textarea + .fc-label {
-    top: 1.5rem;
+    top: 1.6rem;
     transform: translate(0%, 0%);
   }
 
   .fc-textarea:focus + .fc-label,
   .fc-textarea:valid + .fc-label {
-    transform: translate(-150%, 0%);
+    transform: translate(-160%, 0%);
+    color: #64ffda;
   }
 
   .fc-sendMessage-btn {
@@ -155,7 +174,7 @@ const StyledWrapper = styled.div`
   .fc-sendMessage-btn:hover {
     background-color: #64ffda;
     color: #0a0a0a;
-    box-shadow: inset 2px 4px 8px rgba(0,0,0,0.5);
+    box-shadow: inset 2px 4px 8px rgba(0, 0, 0, 0.5);
     transform: scale(1.03);
   }
 
