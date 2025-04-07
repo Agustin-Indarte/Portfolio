@@ -80,7 +80,6 @@ const StyledWrapper = styled.div`
 
   .fc-form-header {
     text-align: center;
-
   }
 
   .fc-form-heading {
