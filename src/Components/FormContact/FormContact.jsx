@@ -9,7 +9,7 @@ const FormContact = () => {
                 <div className="fc-form-card2">
                     <form className="fc-form">
                         <div className="fc-form-header">
-                            <p className="fc-form-heading">Ponete en contacto</p>
+                            <p className="fc-form-heading">Trabajos</p>
                             <p className="fc-form-subtitle">¿Consultas, ideas o proyectos? Estoy para escucharte.</p>
                         </div>
 
@@ -62,7 +62,7 @@ const StyledWrapper = styled.div`
   }
 
   .fc-form-card2 {
-    background-color: #0a0f16;
+    background-color:rgb(15, 21, 29);
     border-radius: 20px;
     padding: 2rem;
     transition: all 0.2s;
