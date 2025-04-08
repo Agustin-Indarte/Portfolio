@@ -83,7 +83,7 @@ function Home() {
       <Row className="w-75 mt-5">
         <Col lg={6} className='d-flex flex-column'>
           <p className='fs-5 mt-4 Parrafo-Perfil'>¡Bienvenido a mi portfolio! Soy:</p>
-          <h1 className='MiNombre mb-4'>Agustin Indarte</h1>
+          <h1 className='Titulos mb-4'>Agustin Indarte</h1>
           <div className="mb-2">
             <Title />
           </div>
