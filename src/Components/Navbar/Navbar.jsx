@@ -35,7 +35,7 @@ const Navbar = () => {
   // Detecta sección activa en base al scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['Home', 'skills', 'projects', 'contact', 'otra'];
+      const sections = ['Home', 'skills', 'projects', 'contact'];
       let currentSection = 'Home'; // fallback
 
       for (let id of sections) {
@@ -121,13 +121,7 @@ const Navbar = () => {
         Proyectos
       </button>
 
-      <button
-        className={`value ${activeSection === 'otra' ? 'active' : ''}`}
-        onClick={() => scrollToSection('otra')}
-      >
-        <MoonStar />
-        Otra Sección
-      </button>
+    
 
 
       <div className="dropdown">

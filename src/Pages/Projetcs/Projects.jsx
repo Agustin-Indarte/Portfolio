@@ -18,7 +18,7 @@ function Projects() {
               <CardProjects
                 title="Sistema AAEMM"
                 details="Gestión de ingresos, egresos y saldos contables."
-                description="Proyecto en desarrollo. Responsable del diseño y organización general, desarrollo del frontend y colaboración en las funciones lógicas para un sistema de gestión de tesorería que permite registrar, modificar y visualizar movimientos."
+                description="Proyecto en desarrollo. Responsable del diseño y organización general, desarrollo del frontend y colaboración en las funciones lógicas para un sistema de gestión que permite registrar y visualizar movimientos contables."
                 technologies={["react", "javascript", "bootstrap", "figma"]}
                 githubUrl=""
                 deployUrl=""
