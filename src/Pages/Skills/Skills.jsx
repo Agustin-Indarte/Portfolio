@@ -98,7 +98,7 @@ function Skills() {
 
 
   return (
-    <section className="skills-section d-flex flex-column justify-content-center text-light h-100">
+    <section className="skills-section d-flex flex-column justify-content-center text-light vh-100">
 
       <h2 className="floating-title Titulos text-center mb-4 d-flex justify-content-center align-items-center gap-2">
         Habilidades
