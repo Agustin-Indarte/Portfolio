@@ -1,47 +1,95 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
+import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const FormContact = () => {
+    const formRef = useRef();
+
+    const initialValues = {
+        nombre: '',
+        email: '',
+        asunto: '',
+        mensaje: '',
+    };
+
+    const validationSchema = Yup.object({
+        nombre: Yup.string().required('El nombre es obligatorio'),
+        email: Yup.string().email('Email inválido').required('El email es obligatorio'),
+        asunto: Yup.string().required('El asunto es obligatorio'),
+        mensaje: Yup.string().required('El mensaje es obligatorio'),
+    });
+
+    const onSubmit = (values, { resetForm }) => {
+        emailjs.sendForm('service_xwyqphe', 'template_5iqasxk', formRef.current, 'TmbimF1gBOKCCqIGU')
+            .then(() => {
+              toast.success('Mensaje enviado correctamente 🚀');
+
+                resetForm();
+            })
+            .catch((error) => {
+                console.error('Error al enviar el mensaje:', error);
+                toast.error('Ups... Hubo un error. Intentalo nuevamente 😢');
+
+            });
+    };
+
     return (
         <StyledWrapper>
             <div className="fc-form-card1 mt-5">
                 <div className="fc-form-card2">
-                    <form className="fc-form">
-                        <div className="fc-form-header">
-                            <p className="fc-form-heading">Trabajos</p>
-                            <p className="fc-form-subtitle">¿Consultas, ideas o proyectos? Estoy para escucharte.</p>
-                        </div>
-
-                        <Row>
-                            <Col lg={6}>
-                                <div className="fc-form-control">
-                                    <input required className="fc-input" type="text" />
-                                    <label className="fc-label">Nombre</label>
+                    <Formik
+                        initialValues={initialValues}
+                        validationSchema={validationSchema}
+                        onSubmit={onSubmit}
+                    >
+                        {() => (
+                            <Form ref={formRef} className="fc-form">
+                                <div className="fc-form-header">
+                                    <p className="fc-form-heading">Trabajos</p>
+                                    <p className="fc-form-subtitle">¿Consultas, ideas o proyectos? Estoy para escucharte.</p>
                                 </div>
-                            </Col>
 
-                            <Col lg={6}>
+                                <Row>
+                                    <Col lg={6}>
+                                        <div className="fc-form-control">
+                                            <Field name="nombre" type="text" className="fc-input" required />
+                                            <label className="fc-label">Nombre</label>
+                                            <ErrorMessage name="nombre" component="div" className="fc-error" />
+                                        </div>
+                                    </Col>
+
+                                    <Col lg={6}>
+                                        <div className="fc-form-control">
+                                            <Field name="email" type="email" className="fc-input" required />
+                                            <label className="fc-label">Email</label>
+                                            <ErrorMessage name="email" component="div" className="fc-error" />
+                                        </div>
+                                    </Col>
+                                </Row>
+
                                 <div className="fc-form-control">
-                                    <input required className="fc-input" type="email" />
-                                    <label className="fc-label">Email</label>
+                                    <Field name="asunto" type="text" className="fc-input" required />
+                                    <label className="fc-label">Asunto</label>
+                                    <ErrorMessage name="asunto" component="div" className="fc-error" />
                                 </div>
-                            </Col>
-                        </Row>
 
-                        <div className="fc-form-control">
-                            <input required className="fc-input" type="text" />
-                            <label className="fc-label">Asunto</label>
-                        </div>
+                                <div className="fc-form-control">
+                                    <Field as="textarea" name="mensaje" rows={4} className="fc-input fc-textarea" required />
+                                    <label className="fc-label">Mensaje</label>
+                                    <ErrorMessage name="mensaje" component="div" className="fc-error" />
+                                </div>
 
-                        <div className="fc-form-control">
-                            <textarea required rows={4} className="fc-input fc-textarea" />
-                            <label className="fc-label">Mensaje</label>
-                        </div>
-
-                        <button className="fc-sendMessage-btn">Enviar</button>
-                    </form>
+                                <button type="submit" className="fc-sendMessage-btn">Enviar</button>
+                            </Form>
+                        )}
+                    </Formik>
                 </div>
+                <ToastContainer position="top-right" autoClose={3000} />
             </div>
         </StyledWrapper>
     );
@@ -110,7 +158,7 @@ const StyledWrapper = styled.div`
     font-size: 0.75em;
     user-select: none;
     pointer-events: none;
-    color: #a0a0a0;
+    color:rgb(0, 0, 0);
     transition: transform 0.2s ease, color 0.2s ease;
   }
 
@@ -119,7 +167,7 @@ const StyledWrapper = styled.div`
     background-color: rgb(255, 255, 255);
     border: none;
     outline: none;
-    color: #f1f1f1;
+    color:rgb(0, 0, 0);
     padding: 1rem;
     font-size: 0.9rem;
     border-radius: 10px;
