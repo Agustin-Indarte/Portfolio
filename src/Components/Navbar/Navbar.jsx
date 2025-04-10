@@ -118,7 +118,7 @@ const Navbar = () => {
         onClick={() => scrollToSection('projects')}
       >
         <FolderCode />
-        <span className="label">IProyectos</span>
+        <span className="label">Proyectos</span>
       </button>
 
     

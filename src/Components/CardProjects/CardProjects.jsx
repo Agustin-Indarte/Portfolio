@@ -73,7 +73,8 @@ const CardProjects = ({
 
       {/* Modal con descripción completa */}
       {isModalOpen && (
-        <ModalOverlay onClick={toggleModal}>
+         <ModalFullScreen>
+<ModalOverlay onClick={toggleModal}>
           <ModalContent onClick={(e) => e.stopPropagation()}>
             <CloseButton onClick={toggleModal}>×</CloseButton>
             {mediaUrl && (
@@ -129,6 +130,8 @@ const CardProjects = ({
             </ButtonGroup>
           </ModalContent>
         </ModalOverlay>
+         </ModalFullScreen>
+        
       )}
     </>
   );
@@ -136,13 +139,27 @@ const CardProjects = ({
 
 // Estilos para el modal (modificados para posicionar más arriba)
 // Estilos para el modal
+
+const ModalFullScreen= styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 2rem;
+`;
+
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: flex-start;

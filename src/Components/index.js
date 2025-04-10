@@ -9,3 +9,4 @@ export {default as CardProjects} from './CardProjects/CardProjects'
 export {default as InfoDerecha} from './InfoExtra/InfoDerecha'
 export {default as InfoIzquierda} from './InfoExtra/InfoIzquierda'
 export {default as CarouselSkills} from './SliderSkills/SliderSkills'
+

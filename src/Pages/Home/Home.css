@@ -29,6 +29,10 @@
     .Titulos {
       font-size: 1.5rem; /* Tamaño más pequeño para móviles */
     }
+
+    #inicio{
+        margin-bottom: 70%;
+    }
   
     .Parrafo-Perfil {
       font-size: 1rem; /* Ajuste para párrafo en móviles */

@@ -10,7 +10,7 @@ function Contact() {
   <InfoIzquierda />
 </div>
 
-<div className="floating mt-md-4" >
+<div >
   <FormContact />
 </div>
 
