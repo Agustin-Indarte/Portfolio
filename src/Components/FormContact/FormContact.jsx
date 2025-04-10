@@ -41,7 +41,7 @@ const FormContact = () => {
     return (
       <>
       <StyledWrapper>
-            <div className="fc-form-card1 mt-5">
+      <div className="fc-form-card1 mt-4 mt-lg-5">
                 <div className="fc-form-card2">
                     <Formik
                         initialValues={initialValues}
@@ -52,11 +52,11 @@ const FormContact = () => {
                             <Form ref={formRef} className="fc-form">
                                 <div className="fc-form-header">
                                     <p className="fc-form-heading">Trabajos</p>
-                                    <p className="fc-form-subtitle">¿Consultas, ideas o proyectos? Estoy para escucharte.</p>
+                                    <p className="fc-form-subtitle">¿Consultas, ideas o proyectos? <br/> Estoy para escucharte.</p>
                                 </div>
 
                                 <Row>
-                                    <Col lg={6}>
+                                <Col lg={6} className="fc-nombre-col">
                                         <div className="fc-form-control">
                                             <Field name="nombre" type="text" className="fc-input" required />
                                             <label className="fc-label">Nombre</label>
@@ -64,7 +64,7 @@ const FormContact = () => {
                                         </div>
                                     </Col>
 
-                                    <Col lg={6}>
+                                    <Col lg={6} className="fc-email-col">
                                         <div className="fc-form-control">
                                             <Field name="email" type="email" className="fc-input" required />
                                             <label className="fc-label">Email</label>
@@ -236,6 +236,17 @@ const StyledWrapper = styled.div`
       margin-inline: 1rem;
     }
   }
+.fc-nombre-col {
+  margin-bottom: 1rem;
+
+  @media (min-width: 992px) {
+    margin-bottom: 0; /* sin margen en desktop */
+  }
+}
+
+.fc-email-col {
+  margin-bottom: 0; /* nunca le pongas margen abajo */
+}
 `;
 
 export default FormContact;
