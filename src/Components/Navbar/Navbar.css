@@ -129,3 +129,15 @@
   background: transparent;
   z-index: 2;
 }
+
+/* Celulares: ocultar solo el texto */
+@media (max-width: 480px) {
+  .value .label {
+    display: none;
+  }
+
+  .value {
+    padding: 10px;
+  }
+}
+

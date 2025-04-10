@@ -41,7 +41,7 @@ const FormContact = () => {
     return (
       <>
       <StyledWrapper>
-      <div className="fc-form-card1 mt-4 mt-lg-5">
+      <div className="fc-form-card1 mt-4 mt-lg-5 mt-md-5">
                 <div className="fc-form-card2">
                     <Formik
                         initialValues={initialValues}
@@ -246,6 +246,45 @@ const StyledWrapper = styled.div`
 
 .fc-email-col {
   margin-bottom: 0; /* nunca le pongas margen abajo */
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .fc-form-card1 {
+    max-width: 700px;
+    padding: 6px;
+  
+  }
+
+  .fc-form-card2 {
+    padding: 3rem;
+  }
+
+  .fc-form-heading {
+    font-size: 2.2rem;
+  }
+
+  .fc-form-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .fc-input {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .fc-label {
+    font-size: 0.85em;
+  }
+
+  .fc-textarea {
+    min-height: 140px;
+    padding-top: 1.8rem;
+  }
+
+  .fc-sendMessage-btn {
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+  }
 }
 `;
 

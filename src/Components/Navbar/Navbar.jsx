@@ -102,7 +102,7 @@ const Navbar = () => {
         onClick={() => scrollToSection('Home')}
       >
         <House />
-        Inicio
+        <span className="label">Inicio</span>
       </button>
 
       <button
@@ -110,7 +110,7 @@ const Navbar = () => {
         onClick={() => scrollToSection('skills')}
       >
         <BrainCircuit />
-        Habilidades
+        <span className="label">Habilidades</span>
       </button>
 
       <button
@@ -118,7 +118,7 @@ const Navbar = () => {
         onClick={() => scrollToSection('projects')}
       >
         <FolderCode />
-        Proyectos
+        <span className="label">IProyectos</span>
       </button>
 
     
@@ -131,7 +131,7 @@ const Navbar = () => {
           className={`value ${activeSection === 'contact' ? 'active' : ''}`}
           onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
           <AtSign />
-          Contacto
+          <span className="label">Contacto</span>
         </button>
 
 
