@@ -317,7 +317,7 @@ const StyledWrapper = styled.div`
   }
 
   .tracker:hover ~ #cardPerfil {
-    transition: 300ms;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     filter: brightness(1.1);
   }
 
