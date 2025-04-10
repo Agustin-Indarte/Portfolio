@@ -88,7 +88,7 @@ function Home() {
   <div className="d-flex  flex-lg-row gap-3">
     <IconButton3D svg={githubSvg} url="https://github.com/Agustin-Indarte" title="GitHub" />
     <IconButton3D svg={linkedinSvg} url="https://www.linkedin.com/in/agustin-indarte/" title="LinkedIn" />
-    <IconButton3D svg={downloadSvg} url="/CV_Agustin_Indarte.pdf" title="Descargar CV" />
+    <IconButton3D svg={downloadSvg} url="/CV-IndarteAgustín.pdf" title="Descargar CV" />
   </div>
   <div className="d-flex justify-content-start">
     <EmailButton />
