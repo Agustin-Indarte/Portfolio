@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Home, Projects, Skills, Contact } from './Pages';
 import { Navbar,Particles } from './Components';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function App() {
@@ -25,7 +26,17 @@ function App() {
       <section id="contact">
         <Contact />
       </section>
-
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Navbar />
     </div>
   );
