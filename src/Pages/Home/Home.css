@@ -3,3 +3,34 @@
 .Parrafo-Perfil{
     color:lightgray;
 }
+
+/* Tamaño de texto por defecto para dispositivos grandes (escritorio) */
+.Titulos {
+    font-size: 2.5rem; /* Tamaño grande para pantallas grandes */
+  }
+  
+  .Parrafo-Perfil {
+    font-size: 1.2rem; /* Tamaño normal para pantallas grandes */
+  }
+  
+  /* Cambiar tamaño de texto en dispositivos medianos (tablets) */
+  @media (max-width: 992px) {
+    .Titulos {
+      font-size: 2rem; /* Tamaño más pequeño para tablets */
+    }
+  
+    .Parrafo-Perfil {
+      font-size: 1.1rem; /* Ajuste para párrafo en tablets */
+    }
+  }
+  
+  /* Cambiar tamaño de texto en dispositivos pequeños (móviles) */
+  @media (max-width: 576px) {
+    .Titulos {
+      font-size: 1.5rem; /* Tamaño más pequeño para móviles */
+    }
+  
+    .Parrafo-Perfil {
+      font-size: 1rem; /* Ajuste para párrafo en móviles */
+    }
+  }

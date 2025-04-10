@@ -43,12 +43,10 @@ const EmailButton = () => {
 
 export default EmailButton;
 
-
-
 const StyledWrapper = styled.div`
   .type--C {
-    --line_color:rgb(247, 247, 247);
-    --back_color:rgb(0, 162, 255);
+    --line_color: rgb(247, 247, 247);
+    --back_color: rgb(0, 162, 255);
   }
   .container {
     width: 100%;
@@ -80,6 +78,16 @@ const StyledWrapper = styled.div`
     height: 100%;
     pointer-events: none;
   }
+
+  /* Responsividad para móviles */
+  @media (max-width: 576px) {
+    .button {
+      width: 200px; /* Reducir el ancho en dispositivos pequeños */
+      height: 50px; /* Reducir la altura */
+      font-size: 0.7rem; /* Reducir el tamaño de la fuente */
+    }
+  }
+
   .button::before,
   .button::after,
   .button__text::before,
@@ -292,3 +300,4 @@ const StyledWrapper = styled.div`
     }
   }
 `;
+

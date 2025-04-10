@@ -59,6 +59,10 @@ const StyledWrapper = styled.div`
   will-change: transform, box-shadow;
   animation: ${floatAnimation} 4s ease-in-out infinite;
   filter: drop-shadow(15px 15px 0px rgba(92, 103, 255, 0.3));
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 /* Añadir sombra más pronunciada */
@@ -70,6 +74,7 @@ const StyledWrapper = styled.div`
   box-shadow: 
     0 15px 35px rgba(0, 0, 0, 0.4),
     0 5px 15px rgba(0, 0, 0, 0.2);
+     width: 350px; /* Ancho fijo para pantallas grandes */
 }
 
 .glass-container {
@@ -765,6 +770,8 @@ const StyledWrapper = styled.div`
     animation: ${floatAnimation} 4s ease-in-out infinite;
     animation-delay: 0.2s;
   }
+
+  
 `;
 
 export default CardPerfil;
